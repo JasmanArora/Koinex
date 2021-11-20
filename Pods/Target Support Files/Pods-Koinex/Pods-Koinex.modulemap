@@ -1,0 +1,6 @@
+framework module Pods_Koinex {
+  umbrella header "Pods-Koinex-umbrella.h"
+
+  export *
+  module * { export * }
+}

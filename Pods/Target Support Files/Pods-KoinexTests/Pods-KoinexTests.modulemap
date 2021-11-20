@@ -1,0 +1,6 @@
+framework module Pods_KoinexTests {
+  umbrella header "Pods-KoinexTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
