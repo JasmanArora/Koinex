@@ -77,7 +77,7 @@ class WalletViewController: UIViewController {
         /*
         availableFunds = getWalletBalance()
         */
-        getWalletBalance()
+        //getWalletBalance()
         //semaphore.wait()
        // updateBalanceOnScreen()
         /*

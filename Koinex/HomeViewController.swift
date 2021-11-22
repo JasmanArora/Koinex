@@ -28,10 +28,17 @@ class HomeViewController: UIViewController {
     var ripplePrice:Double = 0
     var dogecoinPrice:Double = 0
     
+    //var prices: [String:Double] = ["BTC" : 0.0, "ETH":0.0, "ADA": 0.0, "XRP": 0.0, "DOGE": 0.0]
+
+    
     var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print(prices)
+        //prices["BTC"] = 123
+        //print(prices)
+        
         
         self.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
             self.fetchLatestPrice()

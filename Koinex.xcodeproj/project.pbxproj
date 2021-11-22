@@ -26,6 +26,9 @@
 		F9ADD039271422BB00C8F588 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ADD038271422BB00C8F588 /* Validation.swift */; };
 		F9ADD03D2714348B00C8F588 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ADD03C2714348B00C8F588 /* Utility.swift */; };
 		F9BFA419272250C000A99FBA /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BFA418272250C000A99FBA /* WalletViewController.swift */; };
+		F9FA4EC3274A3F8500BAB462 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA4EC2274A3F8500BAB462 /* RewardsViewController.swift */; };
+		F9FA4EC5274A3F9600BAB462 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA4EC4274A3F9600BAB462 /* PortfolioViewController.swift */; };
+		F9FA4EC7274A4F2B00BAB462 /* BuySellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FA4EC6274A4F2B00BAB462 /* BuySellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		F9ADD038271422BB00C8F588 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		F9ADD03C2714348B00C8F588 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		F9BFA418272250C000A99FBA /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		F9FA4EC2274A3F8500BAB462 /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		F9FA4EC4274A3F9600BAB462 /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
+		F9FA4EC6274A4F2B00BAB462 /* BuySellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,9 @@
 				F91D15EE2713C74600619A9B /* RegistrationViewController.swift */,
 				F91D15F02713C76700619A9B /* HomeViewController.swift */,
 				F9BFA418272250C000A99FBA /* WalletViewController.swift */,
+				F9FA4EC4274A3F9600BAB462 /* PortfolioViewController.swift */,
+				F9FA4EC2274A3F8500BAB462 /* RewardsViewController.swift */,
+				F9FA4EC6274A4F2B00BAB462 /* BuySellViewController.swift */,
 				F91D15C22713C69C00619A9B /* Main.storyboard */,
 				F91D15C52713C69D00619A9B /* Assets.xcassets */,
 				F91D15C72713C69D00619A9B /* LaunchScreen.storyboard */,
@@ -437,13 +446,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9ADD03D2714348B00C8F588 /* Utility.swift in Sources */,
+				F9FA4EC7274A4F2B00BAB462 /* BuySellViewController.swift in Sources */,
 				F91D15F12713C76700619A9B /* HomeViewController.swift in Sources */,
 				F91D15ED2713C71900619A9B /* LoginViewController.swift in Sources */,
 				F91D15BD2713C69C00619A9B /* AppDelegate.swift in Sources */,
 				F91D15EF2713C74600619A9B /* RegistrationViewController.swift in Sources */,
+				F9FA4EC3274A3F8500BAB462 /* RewardsViewController.swift in Sources */,
 				F9BFA419272250C000A99FBA /* WalletViewController.swift in Sources */,
 				F9ADD039271422BB00C8F588 /* Validation.swift in Sources */,
 				F98A96DA272906A400F381B0 /* CoinModel.swift in Sources */,
+				F9FA4EC5274A3F9600BAB462 /* PortfolioViewController.swift in Sources */,
 				F91D15BF2713C69C00619A9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
