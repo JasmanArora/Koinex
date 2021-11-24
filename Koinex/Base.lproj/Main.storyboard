@@ -320,6 +320,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rewards" image="giftcard" catalog="system" id="eKk-VH-r7S"/>
+                    <connections>
+                        <outlet property="lbl_userCashback" destination="9m9-aq-BYs" id="Fcb-aP-BX3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQE-SV-Nrd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,7 +331,7 @@
         <!--My Portfolio-->
         <scene sceneID="WAu-4i-yAe">
             <objects>
-                <viewController id="Zdh-5i-2e8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PortfolioViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zdh-5i-2e8" customClass="PortfolioViewController" customModule="Koinex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLn-Jm-RCi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -514,6 +517,19 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Portfolio" image="wallet.pass" catalog="system" id="wdv-yU-BVH"/>
+                    <connections>
+                        <outlet property="lbl_adaPrice" destination="TmA-Jp-nWk" id="SUJ-GF-Fjx"/>
+                        <outlet property="lbl_adaQty" destination="ASD-vr-aTo" id="wTP-xR-y7D"/>
+                        <outlet property="lbl_btcPrice" destination="ORb-lr-Eul" id="x4W-PP-1n1"/>
+                        <outlet property="lbl_btcQty" destination="3FX-2P-bKE" id="DYj-WW-eOp"/>
+                        <outlet property="lbl_dogePrice" destination="60M-aH-TQc" id="Hc9-4o-f57"/>
+                        <outlet property="lbl_dogeQty" destination="4iY-Vk-EQZ" id="CZv-1w-Spp"/>
+                        <outlet property="lbl_ethPrice" destination="k56-aG-h4G" id="RXV-22-YGZ"/>
+                        <outlet property="lbl_ethQty" destination="YqX-fD-Tj4" id="ikV-yE-5xH"/>
+                        <outlet property="lbl_totalHoldings" destination="Vwx-1u-sZa" id="30i-w6-5cC"/>
+                        <outlet property="lbl_xrpPrice" destination="2mI-kG-2dR" id="5rP-Z7-5bh"/>
+                        <outlet property="lbl_xrpQty" destination="7nu-ak-Hap" id="MQa-BT-9mU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vx-cb-RwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -567,7 +583,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Buy"/>
                                 <connections>
-                                    <segue destination="lu5-Ag-Az9" kind="presentation" id="ByZ-Mx-bpW"/>
+                                    <action selector="btn_BuyClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="moa-9X-qtj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-tB-ARd">
@@ -580,6 +596,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sell"/>
+                                <connections>
+                                    <action selector="btn_SellClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="aSG-PN-QCR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin (BTC)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-Sw-Uiu">
                                 <rect key="frame" x="16" y="117" width="86" height="17"/>
@@ -608,7 +627,7 @@
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02Q-0f-OFr">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02Q-0f-OFr">
                                 <rect key="frame" x="254" y="158" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -618,8 +637,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                <connections>
+                                    <action selector="btn_BuyClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="bid-g7-dnn"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFG-uh-E2R">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFG-uh-E2R">
                                 <rect key="frame" x="311" y="158" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -629,6 +651,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sell"/>
+                                <connections>
+                                    <action selector="btn_SellClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="vCO-Xv-7JR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65,859.25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbs-i3-RQx">
                                 <rect key="frame" x="139" y="117" width="80" height="17"/>
@@ -639,7 +664,7 @@
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ci8-2Z-PTi">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ci8-2Z-PTi">
                                 <rect key="frame" x="254" y="203" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -649,8 +674,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                <connections>
+                                    <action selector="btn_BuyClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="Gib-pS-tsU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x35-Uf-cdB">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x35-Uf-cdB">
                                 <rect key="frame" x="311" y="203" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -660,6 +688,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sell"/>
+                                <connections>
+                                    <action selector="btn_SellClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="Imm-2T-cuH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2.26" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-OW-HXW">
                                 <rect key="frame" x="139" y="207" width="80" height="17"/>
@@ -679,7 +710,7 @@
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTo-Mo-aeN">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTo-Mo-aeN">
                                 <rect key="frame" x="254" y="248" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -689,8 +720,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                <connections>
+                                    <action selector="btn_BuyClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="yz2-1e-BJX"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-pe-p66">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-pe-p66">
                                 <rect key="frame" x="311" y="248" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -700,6 +734,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sell"/>
+                                <connections>
+                                    <action selector="btn_SellClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="u66-Sb-Tke"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqn-Um-2dE">
                                 <rect key="frame" x="139" y="252" width="80" height="17"/>
@@ -719,7 +756,7 @@
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o70-4Z-yQV">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o70-4Z-yQV">
                                 <rect key="frame" x="254" y="293" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -729,8 +766,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                <connections>
+                                    <action selector="btn_BuyClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="ZD4-JT-ITf"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUG-Va-gh7">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUG-Va-gh7">
                                 <rect key="frame" x="311" y="293" width="55" height="25"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -740,6 +780,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sell"/>
+                                <connections>
+                                    <action selector="btn_SellClick:" destination="mCH-Za-x7v" eventType="touchUpInside" id="e1g-4P-VCI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dogecoin (DOGE)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLd-qd-8ai">
                                 <rect key="frame" x="13" y="297" width="131" height="17"/>
@@ -828,9 +871,9 @@
         <!--Buy Sell View Controller-->
         <scene sceneID="viP-iu-BgW">
             <objects>
-                <viewController id="lu5-Ag-Az9" customClass="BuySellViewController" customModule="Koinex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuySellViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lu5-Ag-Az9" customClass="BuySellViewController" customModule="Koinex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uZC-bC-L9j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Xfl-dJ-doD">
@@ -880,6 +923,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Confirm"/>
                                 <connections>
                                     <action selector="btn_WithdrawClicked:" destination="wPf-NT-OP1" eventType="touchUpInside" id="1dL-vt-yoU"/>
+                                    <action selector="btn_confirmClicked:" destination="lu5-Ag-Az9" eventType="touchUpInside" id="Cn7-RI-83P"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Qty" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RPC-xe-Z1h">
@@ -930,6 +974,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                 <connections>
                                     <action selector="btn_AddMoneyClicked:" destination="wPf-NT-OP1" eventType="touchUpInside" id="kku-rN-mee"/>
+                                    <action selector="btn_cancelClicked:" destination="lu5-Ag-Az9" eventType="touchUpInside" id="KxH-02-cxm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -957,6 +1002,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lbl_price" destination="uOC-Hr-dRq" id="dvd-1G-ymT"/>
                         <outlet property="txtField_buySell" destination="gl2-J6-R44" id="Rm4-hC-5pn"/>
                         <outlet property="txtField_name" destination="iyt-at-o2P" id="Hmt-La-9OL"/>
                         <outlet property="txtField_qty" destination="RPC-xe-Z1h" id="c3I-RE-oZ1"/>

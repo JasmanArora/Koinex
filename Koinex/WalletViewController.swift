@@ -67,7 +67,7 @@ class WalletViewController: UIViewController {
     }
     
     func updateBalanceOnScreen() {
-        print("Available Funds")
+      //  print("Available Funds")
         self.txrtlbl_AvailableFunds.text = "Available Funds:      $ \(self.availableFunds)"
     }
     
@@ -77,7 +77,7 @@ class WalletViewController: UIViewController {
         /*
         availableFunds = getWalletBalance()
         */
-        //getWalletBalance()
+        getWalletBalance()
         //semaphore.wait()
        // updateBalanceOnScreen()
         /*
