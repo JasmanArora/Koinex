@@ -46,18 +46,18 @@ class PortfolioViewController: UIViewController {
         let adaPrice = userPortfolio["ADA"]! * globalPrices["ADA"]!
         let xrpPrice = userPortfolio["XRP"]! * globalPrices["XRP"]!
         let dogePrice = userPortfolio["DOGE"]! * globalPrices["DOGE"]!
-        lbl_btcQty.text = String(userPortfolio["BTC"]!)
-        lbl_btcPrice.text = String(btcPrice)
-        lbl_ethQty.text = String(userPortfolio["ETH"]!)
-        lbl_ethPrice.text = String(ethPrice)
-        lbl_adaQty.text = String(userPortfolio["ADA"]!)
-        lbl_adaPrice.text = String(adaPrice)
-        lbl_xrpQty.text = String(userPortfolio["XRP"]!)
-        lbl_xrpPrice.text = String(xrpPrice)
-        lbl_dogeQty.text = String(userPortfolio["DOGE"]!)
-        lbl_dogePrice.text = String(dogePrice)
+        lbl_btcQty.text = "My Holdings: " + String(userPortfolio["BTC"]!)
+        lbl_btcPrice.text = "Total Price: $ " + String(btcPrice)
+        lbl_ethQty.text = "My Holdings: " + String(userPortfolio["ETH"]!)
+        lbl_ethPrice.text = "Total Price: $ " + String(ethPrice)
+        lbl_adaQty.text = "My Holdings: " + String(userPortfolio["ADA"]!)
+        lbl_adaPrice.text = "Total Price: $ " + String(adaPrice)
+        lbl_xrpQty.text = "My Holdings: " + String(userPortfolio["XRP"]!)
+        lbl_xrpPrice.text = "Total Price: $ " + String(xrpPrice)
+        lbl_dogeQty.text = "My Holdings: " + String(userPortfolio["DOGE"]!)
+        lbl_dogePrice.text = "Total Price: $ " + String(dogePrice)
         let totalHoldings = btcPrice + ethPrice + adaPrice + xrpPrice + dogePrice
-        lbl_totalHoldings.text = "Total Holdings : $ \(totalHoldings)"
+        lbl_totalHoldings.text = "$ \(totalHoldings)"
        
      
         

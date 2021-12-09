@@ -40,7 +40,8 @@ let db = Firestore.firestore()
                   
                   let wallet = docData?["Wallet"] as? [String:Any] ?? ["":""]
                   self.userCashback = wallet["cashback"] as? Double ?? 0
-                  self.lbl_userCashback.text = "Total Cashback:      $ \(self.userCashback)"
+                  let roundedValue = round(self.userCashback * 1000) / 1000.0
+                  self.lbl_userCashback.text = "Total Cashback:      $ \(roundedValue)"
               
               }
             }

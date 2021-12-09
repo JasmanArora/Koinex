@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "kisspng-dogecoin-cryptocurrency-digital-currency-doge-5ac3a787433205.5952209515227718472752.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "kisspng-dogecoin-cryptocurrency-digital-currency-doge-5ac3a787433205.5952209515227718472752-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "kisspng-dogecoin-cryptocurrency-digital-currency-doge-5ac3a787433205.5952209515227718472752-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

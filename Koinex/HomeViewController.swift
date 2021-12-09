@@ -17,6 +17,31 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lbl_xrpPrice: UILabel!
     @IBOutlet weak var lbl_dogePrice: UILabel!
     
+    @IBOutlet weak var lbl_btcchange: UILabel!
+    @IBOutlet weak var lbl_btclow: UILabel!
+    @IBOutlet weak var lbl_btchigh: UILabel!
+    @IBOutlet weak var img_btc: UIImageView!
+    
+    @IBOutlet weak var lbl_ethchange: UILabel!
+    @IBOutlet weak var lbl_ethlow: UILabel!
+    @IBOutlet weak var lbl_ethhigh: UILabel!
+    @IBOutlet weak var img_eth: UIImageView!
+    
+    @IBOutlet weak var lbl_adachange: UILabel!
+    @IBOutlet weak var lbl_adalow: UILabel!
+    @IBOutlet weak var lbl_adahigh: UILabel!
+    @IBOutlet weak var img_ada: UIImageView!
+    
+    @IBOutlet weak var lbl_xrpchange: UILabel!
+    @IBOutlet weak var lbl_xrplow: UILabel!
+    @IBOutlet weak var lbl_xrphigh: UILabel!
+    @IBOutlet weak var img_xrp: UIImageView!
+    
+    @IBOutlet weak var lbl_dogechange: UILabel!
+    @IBOutlet weak var lbl_dogelow: UILabel!
+    @IBOutlet weak var lbl_dogehigh: UILabel!
+    @IBOutlet weak var img_doge: UIImageView!
+    
     
     
     let getCryptoPriceURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false"
@@ -156,18 +181,48 @@ class HomeViewController: UIViewController {
                         switch coins.symbol {
                         case "btc":
                             self?.prices["BTC"] = coins.currentPrice
+                            self?.lbl_btclow.text = "$ \(coins.low24H ?? 0.0)"
+                            self?.lbl_btchigh.text = "$ \(coins.high24H ?? 0.0)"
+                            self?.lbl_btcchange.text = "\(coins.priceChangePercentage24H ?? 0.0) %"
+//                            let url = URL(string: coins.image)
+//                            let data = try? Data(contentsOf: url!)
+//                            self?.img_btc.image = UIImage(data: data!)
                             break
                         case "eth":
                             self?.prices["ETH"] = coins.currentPrice
+                            self?.lbl_ethlow.text = "$ \(coins.low24H ?? 0.0)"
+                            self?.lbl_ethhigh.text = "$ \(coins.high24H ?? 0.0)"
+                            self?.lbl_ethchange.text = "\(coins.priceChangePercentage24H ?? 0.0) %"
+//                            let url = URL(string: coins.image)
+//                            let data = try? Data(contentsOf: url!)
+//                            self?.img_eth.image = UIImage(data: data!)
                             break
                         case "ada":
                             self?.prices["ADA"] = coins.currentPrice
+                            self?.lbl_adalow.text = "$ \(coins.low24H ?? 0.0)"
+                            self?.lbl_adahigh.text = "$ \(coins.high24H ?? 0.0)"
+                            self?.lbl_adachange.text = "\(coins.priceChangePercentage24H ?? 0.0) %"
+//                            let url = URL(string: coins.image)
+//                            let data = try? Data(contentsOf: url!)
+//                            self?.img_ada.image = UIImage(data: data!)
                             break
                         case "xrp":
                             self?.prices["XRP"] = coins.currentPrice
+                            self?.lbl_xrplow.text = "$ \(coins.low24H ?? 0.0)"
+                            self?.lbl_xrphigh.text = "$ \(coins.high24H ?? 0.0)"
+                            self?.lbl_xrpchange.text = "\(coins.priceChangePercentage24H ?? 0.0) %"
+//                            let url = URL(string: coins.image)
+//                            let data = try? Data(contentsOf: url!)
+//                            self?.img_xrp.image = UIImage(data: data!)
                             break
                         case "doge":
                             self?.prices["DOGE"] = coins.currentPrice
+                            self?.lbl_dogelow.text = "$ \(coins.low24H ?? 0.0)"
+                            self?.lbl_dogehigh.text = "$ \(coins.high24H ?? 0.0)"
+                            self?.lbl_dogechange.text = "\(coins.priceChangePercentage24H ?? 0.0) %"
+//                            let url = URL(string: coins.image)
+//                            let data = try? Data(contentsOf: url!)
+//                            self?.img_doge.image = UIImage(data: data!)
                             break
                         default:
                             print(coins.id)
@@ -193,11 +248,11 @@ class HomeViewController: UIViewController {
     
     func displayCurrentCryptoPrices () {
         
-        lbl_btcPrice.text = "$ " + String(prices["BTC"] ?? 0.0)
-        lbl_ethPrice.text = "$ " + String(prices["ETH"] ?? 0.0)
-        lbl_adaPrice.text = "$ " + String(prices["ADA"] ?? 0.0)
-        lbl_xrpPrice.text = "$ " + String(prices["XRP"] ?? 0.0)
-        lbl_dogePrice.text = "$ " + String(prices["DOGE"] ?? 0.0)
+        lbl_btcPrice.text = "Bitcoin (BTC): $ " + String(prices["BTC"] ?? 0.0)
+        lbl_ethPrice.text = "Ethereum (ETH): $ " + String(prices["ETH"] ?? 0.0)
+        lbl_adaPrice.text = "Cardona (ADA): $ " + String(prices["ADA"] ?? 0.0)
+        lbl_xrpPrice.text = "Ripple (XRP): $ " + String(prices["XRP"] ?? 0.0)
+        lbl_dogePrice.text = "Dogecoin (DOGE): $ " + String(prices["DOGE"] ?? 0.0)
         print("Bitcoin Price: ", prices["BTC"] ?? 0.0)
         print("Ethereum Price: ", prices["ETH"] ?? 0.0)
         print("Cardona Price: ", prices["ADA"] ?? 0.0)

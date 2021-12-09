@@ -99,7 +99,8 @@ class RegistrationViewController: UIViewController {
                 Alert.showBasicAlert(vc: self, title: "Error Creating User!", msg: "Oops Some Unexpected Error Occured, please try after some time!")
             } else {
                 // User Created Succesfully, store info about users
-                self.db.collection("users").document(authResult!.user.uid).setData(["firstname": firstName, "lastname":lastName, "mobileno":mobileNo, "uid": authResult!.user.uid, "Portfolio": ["ADA": 0, "BTC": 0, "DOGE": 0, "ETH": 0, "XRP": 0],"Wallet": ["cashback": 0, "totalfunds": 0]]) { (err) in
+               // print(authResult?.user.uid ?? "")
+                self.db.collection("users").document(authResult?.user.uid ?? "").setData(["firstname": firstName, "lastname":lastName, "mobileno":mobileNo, "uid": authResult?.user.uid ?? "", "Portfolio": ["ADA": 0, "BTC": 0, "DOGE": 0, "ETH": 0, "XRP": 0],"Wallet": ["cashback": 0, "totalfunds": 0]]) { (err) in
                     
                     if err != nil {
                         print("Error Assigning Info About User")

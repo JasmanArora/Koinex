@@ -51,6 +51,7 @@ class BuySellViewController: UIViewController {
                     updateUserBuyPortfolio()
                 } else {
                     print("Please Add Sufficicent Funds to Wallet")
+                    Alert.showBasicAlert(vc: self, title: "Error" , msg: "Please Add Sufficicent Funds to Wallet")
                 }
             } else {
                 // SELL
@@ -58,11 +59,13 @@ class BuySellViewController: UIViewController {
                 if userPortfolio[coinSymbol]! >= quantity {
                     updateUserSellPortfolio()
                 } else {
+                    Alert.showBasicAlert(vc: self, title: "Error" , msg: "You dont have enough \(selectedCoin ?? "") to Sell")
                     print("You dont have enough \(selectedCoin ?? "") to Sell")
                 }
             }
         } else {
             print("Please Select A Valid Quantity")
+            Alert.showBasicAlert(vc: self, title: "Error" , msg: "Please Select A Valid Quantity")
         }
     }
     
@@ -288,6 +291,7 @@ extension BuySellViewController: UIPickerViewDelegate, UIPickerViewDataSource, U
             txtField_name.text = selectedCoin
             let coinSymbol = getCoinSymbol(name: selectedCoin ?? "Bitcoin (BTC)")
             price = prices?[coinSymbol] ?? 0.0
+            lbl_price.text = String(price)
         } else if txtField_buySell.isFirstResponder{
 
             selectedBuySell = buysellList[row] // selected item

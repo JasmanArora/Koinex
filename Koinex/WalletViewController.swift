@@ -68,7 +68,8 @@ class WalletViewController: UIViewController {
     
     func updateBalanceOnScreen() {
       //  print("Available Funds")
-        self.txrtlbl_AvailableFunds.text = "Available Funds:      $ \(self.availableFunds)"
+        let roundedValue = round(availableFunds * 1000) / 1000.0
+        self.txrtlbl_AvailableFunds.text = "Available Funds:      $ \(roundedValue)"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,15 +159,17 @@ class WalletViewController: UIViewController {
             
             
             let amount = Double (addmoney?.description ?? "0.0") ?? 0.0
-            
+            print(addmoney ?? "")
             if amount > 0.0 {
                 availableFunds = availableFunds + amount
                 addFundsToWallet(amount: availableFunds)
                 //self.txrtlbl_AvailableFunds.text = "Available Funds:      $ \(self.availableFunds)"
                 updateBalanceOnScreen()
+            } else {
+                Alert.showBasicAlert(vc: self, title: "Error", msg: "Please Select A Valid Amount")
             }
 
-            print(addmoney ?? "")
+         
             
            
 
@@ -200,16 +203,18 @@ class WalletViewController: UIViewController {
             
             
           let amount = Double (withdrawAmount?.description ?? "0.0") ?? 0.0
-            
+            print(withdrawAmount ?? "")
             if self.availableFunds > 0.0  && amount > 0.0 && self.availableFunds > amount{
                 
                 self.availableFunds = availableFunds - amount
                 addFundsToWallet(amount: availableFunds)
              //   self.txrtlbl_AvailableFunds.text = "Available Funds:         $ \(self.availableFunds)"
                 updateBalanceOnScreen()
+            } else {
+                Alert.showBasicAlert(vc: self, title: "Error!", msg: "Amount should be equal or less than the amount in wallet.")
             }
 
-            print(withdrawAmount ?? "")
+          
             
             
 
